@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <style>
+        h1 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 50%;
+            height: 30vw;
+            display: block;
+            margin: auto;
+        }
+
+        form {
+            display: block;
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 25px;
+            padding: 0.7rem 0.5rem;
+            border-radius: 10px;
+            border: 1px solid rgb(140, 140, 140);
+            font: 1.2rem bold;
+
+        }
+
+        input:focus {
+            outline: 2px solid rgb(107, 166, 255);
+        }
+
+        label {
+            font-size: 1.5rem;
+        }
+
+        .form-section {
+            background-color: rgb(233, 233, 233);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+            border-radius: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgb(140, 140, 140);
+            font: 1.2rem bold;
+        }
+
+        textarea:focus {
+            outline: none;
+            border: 2px solid rgb(107, 166, 255);
+
+        }
+
+        button {
+            padding: 0.6rem;
+            width: 40%;
+            display: block;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 18px;
+
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Amir Ali</h1>
+        <p>
+            I am a student currently learning at ASTU (Adama Science and Technology University).
+            I enjoy learning new things, improving myself, and exploring different areas of study.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repellat ut cum vel distinctio, laboriosam
+            vitae.
+            Consequuntur, pariatur. Inventore corrupti temporibus eaque quae nemo deserunt earum accusantium quidem
+            libero
+            distinctio.</p>
+
+        <div class="form-section">
+            <img src="./img/coder2.jpg" alt="">
+            <form action="">
+                <label for="name">Full Name:</label>
+                <br>
+                <input type="text" id="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" name="" id="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <br>
+                <textarea name="" id="message" rows="6"></textarea>
+                <br><br>
+                <button type="submit" id="btn">submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
