@@ -1,0 +1,48 @@
+body {
+  background-color: rgb(166, 238, 232);
+}
+
+h1 {
+  display: inline-block;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Ubuntu";
+  color: #2f4f4f;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.on {
+  display: none;
+}
+
+
+button {
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  border-radius: 35px;
+  background-color: #acec52;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  main {
+    max-width: 800px;
+    flex-direction: row;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  button {
+    padding: 1rem 6rem;
+    margin: 0;
+  }
+}
