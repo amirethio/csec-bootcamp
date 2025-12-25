@@ -1,9 +1,10 @@
 import "./App.css";
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
-import { createContext,  useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { createContext, useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Stats from "./Pages/Stats";
+
 export const TaskContext = createContext();
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
     );
   };
 
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+  
   return (
     <>
       <TaskContext.Provider
@@ -42,14 +47,11 @@ function App() {
         }}
       >
         <Header />
-        <section className="todo-container">
-          <section className="todo-inside">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/stats" element={<Stats />} />
-            </Routes>
-          </section>
-        </section>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/stats" element={<Stats />} />
+        </Routes>
       </TaskContext.Provider>
     </>
   );

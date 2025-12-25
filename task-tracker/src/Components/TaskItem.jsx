@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { TaskContext } from "../App";
 
 function TaskItem({ task }) {
-  const { deleteTask, toggleTask } = useContext(TaskContext);
+  const { deleteTask, toggleTask, darkMode } = useContext(TaskContext);
 
   const handleDelete = () => {
     deleteTask(task.id);
@@ -12,22 +12,21 @@ function TaskItem({ task }) {
   const handleChecked = () => {
     toggleTask(task.id);
   };
+
   return (
-    <div class="tasks-container">
-      <div className={`tasks ${task.completed && "todo-paras"}`}>
+    <div className={`tasks-container ${darkMode ? "dark" : ""}`}>
+      <div className={`tasks ${task.completed ? "todo-paras" : ""}`}>
         <input
           type="checkbox"
-          name=""
           className="checkbox"
           checked={task.completed}
           onChange={handleChecked}
         />
-        <p>{task.text} </p>
-        <span class="lists-button">
+        <p>{task.text}</p>
+        <span className="lists-button">
           <MdDelete size={20} onClick={handleDelete} />
         </span>
       </div>
-      {console.log(task)}
     </div>
   );
 }
