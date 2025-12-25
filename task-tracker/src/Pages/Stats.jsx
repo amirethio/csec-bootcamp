@@ -8,20 +8,23 @@ const Stats = () => {
   const completed = tasks.filter((t) => t.completed).length;
   const remaining = total - completed;
 
-
-
   return (
-    <section className="todo-footer">
-      <p className="total-p">
-        Total Todos: <span className="total">{total}</span>
-      </p>
-      <p>
-        Completed: <span className="completed">{completed}</span>
-      </p>
-      <p>
-        Remaining: <span className="remaining">{remaining}</span>
-      </p>
-  
+    <section className="stats-container">
+      <h2>Task Statistics</h2>
+      <div className="stats-items">
+        <div className="stat-item">
+          <span className="label">Total Tasks</span>
+          <span className="value">{total}</span>
+        </div>
+        <div className="stat-item">
+          <span className="label">Completed</span>
+          <span className="value completed">{completed}</span>
+        </div>
+        <div className="stat-item">
+          <span className="label">Remaining</span>
+          <span className="value remaining">{remaining}</span>
+        </div>
+      </div>
     </section>
   );
 };

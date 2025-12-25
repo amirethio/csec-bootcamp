@@ -3,14 +3,18 @@ import TaskItem from "./TaskItem";
 import { TaskContext } from "../App";
 
 function TaskList() {
-  const { tasks, darkMode } = useContext(TaskContext);
+  const { tasks, deleteTask } = useContext(TaskContext);
 
   return (
-    <div className={darkMode ? "tasks-container dark" : "tasks-container"}>
-      {tasks.map((task) => (
-        <TaskItem task={task} key={task.id} />
-      ))}
-    </div>
+    <>
+      {tasks.length === 0 ? (
+        <h1 className="no-tasks">NO content</h1>
+      ) : (
+        tasks.map((task) => (
+          <TaskItem task={task} key={task.id} delete={deleteTask} />
+        ))
+      )}
+    </>
   );
 }
 

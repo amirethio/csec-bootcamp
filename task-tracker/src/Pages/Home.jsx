@@ -1,15 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import Header from "../Components/Header";
 import TaskInput from "../Components/TaskInput";
 import TaskList from "../Components/TaskList";
-import { TaskContext } from "../App";
 
 function Home() {
-  const { darkMode } = useContext(TaskContext);
-
   return (
     <>
-      <div className={`outer-cont ${darkMode ? "dark" : ""}`}>
+      <div className="outer-cont">
         <section className="todo-container">
           <section className="todo-inside">
             <TaskInput />

@@ -8,13 +8,26 @@ import Stats from "./Pages/Stats";
 export const TaskContext = createContext();
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
   const [nextId, setNextId] = useState(1);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (text) => {
     if (!text.trim()) return;
     setTasks([...tasks, { id: nextId, text, completed: false }]);
+
     setNextId(nextId + 1);
   };
 
@@ -30,10 +43,12 @@ function App() {
     );
   };
 
-  useEffect(() => {
-    document.body.classList.toggle("dark", darkMode);
-  }, [darkMode]);
-  
+ useEffect(() => {
+   localStorage.setItem("darkMode", JSON.stringify(darkMode));
+   document.body.classList.toggle("dark", darkMode);
+ }, [darkMode]);
+
+
   return (
     <>
       <TaskContext.Provider
@@ -42,11 +57,9 @@ function App() {
           addTask,
           deleteTask,
           toggleTask,
-          setDarkMode,
-          darkMode,
         }}
       >
-        <Header />
+        <Header setDarkMode={setDarkMode} darkMode={darkMode} />
 
         <Routes>
           <Route path="/" element={<Home />} />

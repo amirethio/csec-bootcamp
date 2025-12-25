@@ -309,3 +309,90 @@ body.dark .todo-paras p {
 }
 
 
+
+/* status page styling */
+.stats-container {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.stats-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.stats-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f4f6;
+  padding: 12px 20px;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+.stat-item .label {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.stat-item .value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.stat-item .completed {
+  color: green;
+}
+
+.stat-item .remaining {
+  color: #dc2626;
+}
+
+/* Dark Mode */
+body.dark .stats-container {
+  background-color: #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark .stat-item {
+  background-color: #0f172a;
+}
+
+body.dark .stat-item .label {
+  color: #94a3b8;
+}
+
+body.dark .stat-item .value {
+  color: #e5e7eb;
+}
+
+body.dark .stat-item .completed {
+  color: #22c55e;
+}
+
+body.dark .stat-item .remaining {
+  color: #f87171;
+}
+
+@media (max-width: 480px) {
+  .stats-items {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

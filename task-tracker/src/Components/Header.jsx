@@ -1,16 +1,14 @@
 import React, { useContext } from "react";
 import { TaskContext } from "../App";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // import Link
 
-function Header() {
-  const { setDarkMode, darkMode } = useContext(TaskContext);
-
+function Header({ setDarkMode, darkMode }) {
   const handleClick = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((pre) => !pre);
   };
 
   return (
-    <header className={`header ${darkMode ? "dark" : ""}`}>
+    <header className="header">
       <h1>Task Tracker</h1>
 
       <button className="dark-mode-toggle" onClick={handleClick}>
